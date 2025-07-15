@@ -34,7 +34,7 @@ public class AuthController {
         boolean valid = jwtService.validateToken(token);
         if (valid) {
             String usuario = jwtService.getUsernameForToken(token);
-            return ResponseEntity.ok("Token valido para usario" + usuario);
+            return ResponseEntity.ok("Token validado para usuario" + usuario);
         } else {
             return ResponseEntity.status(401).body("Invalid token");
         }
